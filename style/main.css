@@ -1,0 +1,653 @@
+:root {
+  --background-color1: #c7c6d2;
+  --background-color2: #aa381e;
+  --main-text-color1: #000;
+  --main-text-color2: #fff;
+  --link-color: #bbddbb;
+  --splash-color: #d78d1d;
+  --palatino: "Palatino", "URW Palladio L", serif;
+  --times: "Times New Roman", Times, serif;
+  --sanes: Arial, sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* This is for all platforms */
+html,
+body {
+  width: max(100%, 280px);
+  height: 100%;
+}
+
+.margin {
+  width: 80vw;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+header, footer {
+  background-color: var(--splash-color);
+  color: var(--main-text-color1);
+}
+.hero {
+  background-color: rgba(215, 141, 29, 0.5);
+  color: var(--main-text-color2);
+}
+.background_color_purple {
+  min-height: 100vh;
+  background-color: var(--background-color1);
+  color: var(--main-text-color1);
+}
+.background_color_red {
+  min-height: 100vh;
+  background-color: rgba(170, 56, 30, 0.5);
+  color: var(--main-text-color2);
+}
+.mountionBackgroundImg {
+  background-image: url("/img/mountain_1920px.jpg");
+  /* Photo by Tobias Bjørkli from Pexels */
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position-y: calc(42% + 5vw);
+  background-position-x: center;
+}
+ul {
+  list-style-type: none;
+}
+h1 {
+  font-size: clamp(2.125rem, 5vw, 4.125rem);
+  font-family: var(--palatino);
+}
+h2 {
+  font-size: clamp(2rem, 3.34vw, 3.5rem);
+  font-family: var(--palatino);
+}
+h3 {
+  font-size: clamp(2rem, 3.34vw, 3.5rem);
+  font-family: var(--times);
+}
+h4 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-family: var(--times);
+}
+p {
+  font-size: clamp(1.375rem, 2.15vw, 2rem);
+  font-family: var(--times);
+}
+a {
+  font-size: clamp(1.125rem, 1.55vw, 1.625rem);
+  font-family: var(--times);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--main-text-color1);
+}
+a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+.box {
+  border-style: solid;
+  border-width: thick;
+  padding: 10px;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1280px) {
+  .mountionBackgroundImg {
+    background-image: url("/img/mountain_1280px.jpg");
+    /* Photo by Jonathan Borba from Pexels */
+    background-position-y: calc(45% + 5.5vw);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .mountionBackgroundImg {
+    background-image: url("/img/mountain_640px.jpg");
+    /* Photo by Jonathan Borba from Pexels */
+    background-position-y: calc(42% + 5vw);
+  }
+}
+/* End of all platforms */
+
+/* This is for the Header section */
+header {
+  height: max(15vh, 140px);
+  display: flex;
+  justify-content: center;
+}
+.headerLeft {
+  width: 40%;
+}
+.headerLeft h2 a {
+  font-size: clamp(2rem, 3.34vw, 3.5rem);
+  font-family: var(--palatino);
+}
+.headerRight {
+  width: 60%;
+}
+.headerLeft h2 {
+  font-style: italic;
+}
+
+/* What language does user want? */
+.language {
+  float: right;
+  display: inline;
+}
+.english,
+.slash,
+.korean {
+  float: left;
+  display: inline;
+}
+.english,
+.korean {
+  padding-top: 0.5vh;
+  font-family: var(--sanes);
+}
+.slash,
+.korean {
+  margin-left: 10px;
+}
+.active {
+  color: var(--link-color);
+}
+
+/* This is for the navBar section */
+.navBar {
+  float: right;
+  display: inline;
+  padding-left: 100px;
+}
+.hamburger {
+  float: right;
+  display: inline;
+  padding-left: 8vw;
+}
+.menu li {
+  display: inline;
+}
+.menuItems {
+  display: inline-block;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1150px) {
+  .language {
+    padding-bottom: 25px;
+  }
+  .headerLeft {
+    width: 50%;
+    padding-right: 20vw;
+  }
+  .headerRight {
+    width: 50%;
+    padding-left: calc(25vw - 25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* This is for the Haberger stuff */
+  .hamburger {
+    --hm-width: 3em;
+    --hm-height: 0.35em;
+    --spacing: calc(var(--hm-width) / 4);
+
+    width: var(--hm-width);
+    height: var(--hm-height);
+    background-color: var(--main-text-color1);
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+    z-index: 100;
+  }
+  .hamburger::after,
+  .hamburger::before {
+    content: "";
+    width: 59%;
+    height: inherit;
+    background-color: var(--main-text-color1);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s ease-in-out;
+  }
+  .hamburger::after {
+    top: calc(-1 * var(--spacing));
+  }
+  .hamburger::before {
+    top: var(--spacing);
+    left: 50%;
+  }
+  .close.hamburger::before,
+  .close.hamburger::after {
+    left: 50%;
+    transform: translate(-50%) rotate(-450deg);
+    background-color: var(--main-text-color1);
+  }
+  .close.hamburger {
+    transform: rotate(45deg);
+    background-color: var(--main-text-color1);
+  }
+  /* End of the Haberger stuff */
+
+  .menu li {
+    display: block;
+  }
+  .navBar {
+    margin-top: 0;
+    position: absolute;
+    background-color: var(--background-color1);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in;
+  }
+  .revealNav {
+    transform: scaleX(1);
+    opacity: 0.9;
+    position: fixed;
+  }
+  .menuItems {
+    color: var(--main-text-color1);
+    float: none;
+    width: 100%;
+    font-size: calc(1.125rem + 4vw);
+    opacity: 0;
+    transform: translate(-20em);
+    display: block;
+    transition: transform 0.8s ease-in-out, opacity 0.3s ease-in;
+  }
+  .menu li + li {
+    margin-top: 3em;
+  }
+  .revealItems .menuItems {
+    transform: translate(0);
+    opacity: 1;
+  }
+  .revealItems li:nth-child(1) .menuItems {
+    transition-delay: 0.1s;
+  }
+  .revealItems li:nth-child(2) .menuItems {
+    transition-delay: 0.2s;
+  }
+  .revealItems li:nth-child(3) .menuItems {
+    transition-delay: 0.3s;
+  }
+  .revealItems li:nth-child(4) .menuItems {
+    transition-delay: 0.4s;
+  }
+  .revealItems li:nth-child(5) .menuItems {
+    transition-delay: 0.5s;
+  }
+}
+
+@media only screen and (max-width: 891px) {
+  .headerLeft {
+    padding-right: calc(20vw - 30px);
+  }
+  .slash,
+  .korean {
+    margin-left: 5px;
+  }
+}
+@media only screen and (max-width: 824px) {
+  .language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .slash {
+    display: none;
+  }
+  .english,
+  .korean {
+    margin-left: 0;
+  }
+}
+/* End of the Header section */
+
+/* This is for the Hero section */
+.crossImg {
+  background-image: url("/img/cross_1920px.jpg");
+  /* Photo by Jonathan Borba from Pexels */
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position-y: calc(42% + 5vw);
+  background-position-x: center;
+}
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hero p {
+  max-width: 59vw;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero a {
+  color: var(--main-text-color2);
+}
+
+@media only screen and (max-width: 1280px) {
+  .crossImg {
+    background-image: url("/img/cross_1280px.jpg");
+    /* Photo by Jonathan Borba from Pexels */
+    background-position-y: calc(45% + 5.5vw);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .crossImg {
+    background-image: url("/img/cross_640px.jpg");
+    /* Photo by Jonathan Borba from Pexels */
+    background-position-y: calc(42% + 5vw);
+  }
+}
+@media only screen and (max-height: 674px) {
+  .welcome {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .learnMore {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .welcome {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  .learnMore {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 296px) {
+  .welcome h1 {
+    text-align: center;
+  }
+}
+/* End of the Hero section */
+
+/* This is for the Learn More/I'm New page */
+.crossImgscroll {
+  background-image: url("/img/cross_1920px.jpg");
+  /* Photo by Jonathan Borba from Pexels */
+  background-repeat: repeat;
+  background-attachment:scroll;
+  background-position-y: calc(42% + 5vw);
+  background-position-x: center;
+}
+.spacing {
+  padding: 50px 0;
+}
+/* End of the Learn More/I'm New page */
+
+/* This is for the Service section */
+#service {
+  height: max(100vh, 725px);
+}
+.bigBox {
+  border-style: solid;
+  border-width: medium;
+  width: 65vw;
+  height: max(625px, 75vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.serviceImg {
+  width: 50%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .bigBox {
+    height: 60vh;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .bigBox h3 {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 561px) {
+  .bigBox p {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 384px) {
+  #service h1 {
+    text-align: center;
+  }
+}
+/* End of the Service section */
+
+/* This is for the Mission section */
+.missionInfo {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.missionContent {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.missionImg {
+  /* get ride of when have real img */
+  width: max(32%, 250px);
+  height: auto;
+}
+#mission a {
+  color: var(--main-text-color2);
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 833px) {
+  #mission h1 {
+    margin-top: 30px;
+  }
+  .missionInfo {
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .missionContent {
+    width: 50vw;
+  }
+  .missionInfo h3 {
+    margin-bottom: 10px;
+  }
+  .missionInfo p {
+    margin-bottom: 10px;
+  }
+  #mission .box {
+    margin-bottom: 30px;
+  }
+}
+/* End of the Mission section */
+
+/* This is for the Mission Page */
+.mission_header {
+  padding-top: 50px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+.info .missionImg {
+  margin: 25px 0;
+}
+/* End of the Mission Page */
+
+/* This is for the Leaders section */
+#leaders {
+  min-height: 100vh;
+}
+.leadersSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.leader {
+  height: 350px;
+  width: max(33vw, 540px);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 0;
+}
+.leader_img {
+  /* get ride of when have real img */
+  border-radius: 50%;
+  width: 45%;
+  height: auto;
+}
+.leaderTxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .leadersSection {
+    flex-direction: column;
+  }
+  .leader {
+    height: 300px;
+    width: 250px;
+  }
+  .leader_img {
+    /* get ride of when have real img */
+    width: 243px;
+    height: auto;
+  }
+}
+/* End of the Leaders section */
+
+/* This is for the Contact section */
+.contactQuestions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contactQuestions h4 {
+  font-size: clamp(2rem, 3.34vw, 3rem);
+  font-family: var(--times);
+  font-weight: normal;
+  text-align: center;
+}
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contactInfo p a, address {
+  color: var(--main-text-color2);
+  font-size: clamp(1.375rem, 2.15vw, 2rem);
+  font-family: var(--times);
+}
+.contactInfo p a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+/* End of the Contact section */
+
+/* This is for the Footer section */
+footer {
+  height: max(50vh, 470px);
+  display: flex;
+  justify-content: center;
+}
+.footerTop {
+  height: 41.2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.footerLinks {
+  width: 40vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.usefillLinks {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.link {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footerNav {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blackLine {
+  width: 100%;
+  height: .5vh;
+  background-color: black;
+}
+.footerBot {
+  height: 8.3vh;
+  display: flex;
+  align-items: center;
+}
+.footerBot p {
+  margin: 0 45px;
+  font-size: clamp(1rem, 2.15vw, 1.25rem);
+}
+
+@media only screen and (max-width: 850px) {
+
+}
+/* End of the the Footer section */
