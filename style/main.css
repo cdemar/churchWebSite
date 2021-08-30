@@ -54,7 +54,7 @@ header, footer {
   color: var(--main-text-color2);
 }
 .mountionBackgroundImg {
-  background-image: url("/img/mountain_1920px.jpg");
+  background-image: url("../img/mountain_1920px.jpg");
   /* Photo by Tobias Bjørkli from Pexels */
   background-repeat: repeat;
   background-attachment: fixed;
@@ -109,14 +109,14 @@ a:hover {
 
 @media only screen and (max-width: 1280px) {
   .mountionBackgroundImg {
-    background-image: url("/img/mountain_1280px.jpg");
+    background-image: url("../img/mountain_1280px.jpg");
     /* Photo by Jonathan Borba from Pexels */
     background-position-y: calc(45% + 5.5vw);
   }
 }
 @media only screen and (max-width: 640px) {
   .mountionBackgroundImg {
-    background-image: url("/img/mountain_640px.jpg");
+    background-image: url("../img/mountain_640px.jpg");
     /* Photo by Jonathan Borba from Pexels */
     background-position-y: calc(42% + 5vw);
   }
@@ -335,7 +335,7 @@ header {
 
 /* This is for the Hero section */
 .crossImg {
-  background-image: url("/img/cross_1920px.jpg");
+  background-image: url("../img/cross_1920px.jpg");
   /* Photo by Jonathan Borba from Pexels */
   background-repeat: repeat;
   background-attachment: fixed;
@@ -363,14 +363,14 @@ header {
 
 @media only screen and (max-width: 1280px) {
   .crossImg {
-    background-image: url("/img/cross_1280px.jpg");
+    background-image: url("../img/cross_1280px.jpg");
     /* Photo by Jonathan Borba from Pexels */
     background-position-y: calc(45% + 5.5vw);
   }
 }
 @media only screen and (max-width: 640px) {
   .crossImg {
-    background-image: url("/img/cross_640px.jpg");
+    background-image: url("../img/cross_640px.jpg");
     /* Photo by Jonathan Borba from Pexels */
     background-position-y: calc(42% + 5vw);
   }
@@ -404,7 +404,7 @@ header {
 
 /* This is for the Learn More/I'm New page */
 .crossImgscroll {
-  background-image: url("/img/cross_1920px.jpg");
+  background-image: url("../img/cross_1920px.jpg");
   /* Photo by Jonathan Borba from Pexels */
   background-repeat: repeat;
   background-attachment:scroll;
